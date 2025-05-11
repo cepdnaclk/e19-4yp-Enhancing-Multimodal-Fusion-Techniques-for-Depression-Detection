@@ -1,4 +1,4 @@
-# LumiThrive Project Deployment
+# Application Deployment
 
 Follow these steps to run the LumiThrive project on your machine:
 
