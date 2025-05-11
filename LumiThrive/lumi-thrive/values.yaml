@@ -1,0 +1,18 @@
+backend:
+  image: lumi-backend
+  tag: latest
+  port: 4000
+  pullPolicy: Never
+
+frontend:
+  image: lumi-frontend
+  tag: latest
+  port: 80
+  pullPolicy: Never
+
+mongo:
+  image: mongo
+  port: 27017
+
+service:
+  port: 80
