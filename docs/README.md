@@ -57,13 +57,13 @@ Below are the architectural diagrams of our proposed multimodal fusion models:
 
 ### 1. Early Fusion Model Architecture
 
-![Early Fusion Model Architecture](./images/early_fusion_model.png)
+![Early Fusion Model Architecture](./images/arc01.png)
 
 *Figure 1: The Early Fusion model combines features from all modalities (such as audio, video, and text) at the input level before feeding them into a unified deep learning model. This approach allows the model to learn joint representations from the start, potentially capturing complex inter-modal relationships.*
 
 ### 2. Late Fusion Model Architecture
 
-![Late Fusion Model Architecture](./images/late_fusion_model.png)
+![Late Fusion Model Architecture](./images/arc02.png)
 
 *Figure 2: The Late Fusion model processes each modality independently through separate models and combines their outputs at the decision level. This enables each modality to contribute its own prediction before the final decision is made, allowing for more specialized feature extraction per modality.*
 
