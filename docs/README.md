@@ -6,7 +6,9 @@ repository-name: e19-4yp-Enhancing-Multimodal-Fusion-Techniques-for-Depression-D
 title: Enhancing Multimodal Fusion Techniques for Depression Detection
 ---
 
-# LumiThrive: Enhancing Multimodal Fusion Techniques for Depression Detection
+
+# Enhancing Multimodal Fusion Techniques for Depression Detection
+
 
 #### Team
 
@@ -34,67 +36,53 @@ title: Enhancing Multimodal Fusion Techniques for Depression Detection
 
 ## Abstract
 
-The LumiThrive application is designed to detect depression using a multimodal fusion framework combining text, audio, video, and clinical features. It leverages deep learning models to predict depression likelihood and provides visual insights through a web dashboard.
+The project aims to enhance depression detection using multimodal data fusion techniques by integrating text, audio, video, and clinical data. The approach addresses limitations in existing models such as lack of generalization and insufficient accuracy for clinical applications. By employing hybrid and target-level fusion mechanisms, the proposed model seeks to improve detection accuracy and provide a foundation for personalized treatment plans.
 
 ## Related works
 
-<!-- Add literature review and related research here -->
+- Text-based detection using LSTM, BERT, GPT.
+- Audio-based detection with CNNs, LSTMs, Wav2Vec.
+- Video-based detection with CNN, ResNet-50.
+- Clinical data use from MIMIC-III, leveraging medical history and notes.
+- Limitations include lack of emotional depth, generalization, and bias handling.
+- Existing multimodal models often rely on limited datasets and early/late fusion.
 
 ## Methodology
 
-### Modalities and Feature Extraction
-
-| Modality | Tools Used | Features Extracted |
-|----------|-------------|--------------------|
-| **Text** | NLTK, HuggingFace Transformers | Word embeddings, sentiment scores, LIWC |
-| **Audio** | OpenSMILE | MFCCs, pitch, prosody, jitter, shimmer |
-| **Video** | OpenFace | Facial Action Units (FAUs), eye gaze, head movement |
-| **Clinical** | Manual / survey data | PHQ-9 score, sleep pattern, medication usage |
-
-### Model Architecture
-
-#### 1. **Early Fusion**
-- **Input**: Concatenated features from all modalities
-- **Model**: Multi-Layer Perceptron (MLP)
-- **Loss**: Binary Cross Entropy / MSE
-- **Use Case**: All modalities available
-
-#### 2. **Attention-Based Fusion**
-- **Input**: Separate encoders (e.g., BERT, CNN)
-- **Fusion**: Cross-modal attention
-- **Output**: Softmax/Sigmoid layers
-- **Advantage**: Learns modality importance dynamically
-
-#### 3. **Robust Fusion with Modality Dropout**
-- Handles missing modalities using dropout during training
-- Resilient to incomplete inputs at inference time
+- Use of DAIC-WOZ, EDAIC-WOZ (text, audio, video), MIMIC-III (clinical), AVEC2014 datasets.
+- Feature extraction:
+  - Text: TF-IDF, BERT embeddings.
+  - Audio: MFCC, mel-spectrograms, OpenSMILE, DenseNet-201, VGG-16.
+  - Video: Facial AUs, pose, gaze via OpenFace, embeddings via ResNet-50, VGG-16.
+- Data segmented into 4-second windows with 1-second overlaps.
 
 ## Experiment Setup and Implementation
 
-### Application Deployment
+- Model architectures using fully connected layers and target-level fusion.
+- Emphasis on extracting deep multimodal features for better performance.
+- Plan to develop a web-based counselor channeling app with chatbot-driven detection and optional user data contribution.
 
-Follow these steps to run the LumiThrive project locally:
+## Results and Analysis
 
-1. **Install Docker Desktop**  
-   Download and install from the official [Docker website](https://www.docker.com/).
+(Results to be updated after experimentation phase.)
 
-2. **Enable Kubernetes Cluster**  
-   In Docker Desktop:  
-   `Settings -> Kubernetes -> Enable Kubernetes`
+## Conclusion
 
-3. **Navigate to LumiThrive Folder**  
-   ```bash
-   cd /path/to/LumiThrive
+This research is expected to yield a clinically usable model with enhanced accuracy in depression detection, leveraging deep multimodal feature fusion and enriched datasets.
+
+## Publications
+
+<!-- Uncomment when available -->
+<!-- 1. [Semester 7 report](./) -->
+<!-- 2. [Semester 7 slides](./) -->
+<!-- 3. [Semester 8 report](./) -->
+<!-- 4. [Semester 8 slides](./) -->
+<!-- 5. Dissanayaka M.A.S.R, Neranji W.K.G.A.G, Nishantha R.P.T. "Enhancing Multimodal Fusion Techniques for Depression Detection" (2025). [PDF](./) -->
 
 
 ## Links
-
-[//]: # ( NOTE: EDIT THIS LINKS WITH YOUR REPO DETAILS )
 
 - [Project Repository](https://github.com/cepdnaclk/e19-4yp-Enhancing-Multimodal-Fusion-Techniques-for-Depression-Detection)
 - [Project Page](https://cepdnaclk.github.io/e19-4yp-Enhancing-Multimodal-Fusion-Techniques-for-Depression-Detection/)
 - [Department of Computer Engineering](http://www.ce.pdn.ac.lk/)
 - [University of Peradeniya](https://eng.pdn.ac.lk/)
-
-[//]: # "Please refer this to learn more about Markdown syntax"
-[//]: # "https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet"
