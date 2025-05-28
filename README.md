@@ -1,157 +1,195 @@
-# Application Deployment
+# LumiThrive - Multimodal Depression Detection System
 
-Follow these steps to run the LumiThrive project on your machine:
+## Overview
 
-1. **Install Docker Desktop**  
-   - Download Docker Desktop from the [official website](https://www.docker.com/products/docker-desktop) and install it on your machine.
+LumiThrive is a cutting-edge application that leverages multimodal fusion techniques to detect depression using audio, video, text, and clinical data. The system employs advanced machine learning models built with PyTorch and scikit-learn to provide accurate depression assessment.
 
-2. **Enable Kubernetes Cluster**  
-   - Open Docker Desktop and navigate to `Settings` -> `Kubernetes`.
-   - Enable the Kubernetes cluster and wait for it to finish setting up.
+## Quick Start Guide
 
-3. **Navigate to LumiThrive Folder**  
-   - Open your terminal and navigate to the `LumiThrive` folder where the project files are located:
-   cd /path/to/LumiThrive like that
+### Prerequisites
 
-4. **Make the deploy.sh Script Executable**  
-    - Run the following command
-    'chmod +x deploy.sh'
+- Docker Desktop installed and running
+- Git for version control
+- Terminal/Command Line access
 
-5. **Run the Deployment Script**  
-    - Run the following command 
-    './deploy.sh'
+### Deployment Steps
 
-6. **Access the Frontend**  
-    - After the deployment is complete, you can access the frontend by visiting:
-    'http://localhost:80'
+#### 1. Install Docker Desktop
 
-7. **Access the Backend**
-    - You can use the following backend URL:
-    'http://backend:4000'
+Download and install Docker Desktop from the [official website](https://www.docker.com/products/docker-desktop).
 
-8. **Using Git for Collaboration**  
-   - Clone the repository:
-     `git clone git@github.com:your-org-or-username/LumiThrive.git`
-     Then navigate to the project directory:
-     `cd LumiThrive`
-   - Checkout the branch named after your E-number (e.g., `e19087`):
-     `git checkout e19087`
-   - Push your updated code to your branch:
-     `git add .`
-     `git commit -m "Your meaningful commit message"`
-     `git push origin e19087`
-   - Create a pull request (PR) from your branch to the `main` branch on GitHub.
-   - **Do not merge your PR into `main` without approval from another team member.**
-  
+#### 2. Configure Kubernetes
 
-# Modeling
+1. Open Docker Desktop
+2. Navigate to **Settings** → **Kubernetes**
+3. Enable the Kubernetes cluster
+4. Wait for the setup to complete
 
-The LumiThrive application uses a multimodal fusion framework to detect depression from audio, video, text, and optional clinical features. The modeling pipeline is built using Python and trained using PyTorch and scikit-learn.
+#### 3. Project Setup
 
+```bash
+# Navigate to the project directory
+cd /path/to/LumiThrive
 
-**Modality	Tools Used	Features**
+# Make deployment script executable
+chmod +x deploy.sh
 
-   - **Text**      NLTK, HuggingFace Transformers	Word embeddings, sentiment scores, LIWC features
-   
-   - **Audio**	   OpenSMILE	MFCCs, pitch, prosody, jitter, shimmer
-   
-   - **Video**	   OpenFace	Facial Action Units (FAUs), eye gaze, head movement
-   
-   - **Clinical**	Manual or automated survey data	PHQ-9 score, sleep pattern, medication usage
+# Run deployment
+./deploy.sh
+```
 
-**Model Architecture**
+#### 4. Access the Application
 
-The application supports the following modeling strategies:
+- **Frontend**: [http://localhost:80](http://localhost:80)
+- **Backend API**: [http://backend:4000](http://backend:4000)
 
-1.**Early Fusion Model**
-   
-   - Input: Concatenated feature vectors from all available modalities
-   
-   - Model: MLP (Multi-Layer Perceptron)
-   
-   - Loss Function: Binary Cross Entropy (for classification) or MSE (for regression)
-   
-   - Use Case: When all modalities are present and aligned
+## Development Workflow
 
-2.**Attention-Based Fusion**
-      
-   - Input: Independent modality encoders (e.g., BERT for text, CNN for video)
-   
-   - Fusion Layer: Cross-modal attention mechanism
-   
-   - Output Layer: Fully-connected layers with softmax or sigmoid
-   
-   - Advantage: Dynamically learns which modality is more important per instance
+### Repository Management
 
-3.**Modality Dropout / Robust Fusion**
-   
-   - Uses modality dropout during training to simulate missing modalities
-   
-   - Trained to be resilient to incomplete inputs at inference time
-   
-   - Can degrade gracefully with one or more missing modalities
+#### Initial Setup
+```bash
+# Clone the repository
+git clone git@github.com:your-org-or-username/LumiThrive.git
 
-4.**Training Workflow**
+# Navigate to project directory
+cd LumiThrive
 
-   - bash
-     
-   - Copy
-     
-   - Edit
+# Checkout your development branch (using your E-number)
+git checkout e19087
+```
 
+#### Development Cycle
+```bash
+# Stage changes
+git add .
 
+# Commit with descriptive message
+git commit -m "feat: add multimodal attention mechanism"
 
-# Setup Python environment
+# Push to your branch
+git push origin e19087
+```
 
-'conda create -n lumi_model python=3.10'
+#### Code Integration
+1. Create a Pull Request (PR) from your branch to `main`
+2. **⚠️ Important**: Never merge to `main` without team approval
+3. Request code review from team members
+4. Address feedback before merging
 
-'conda activate lumi_model'
+## Machine Learning Architecture
 
-'pip install -r requirements.txt'
+### Supported Modalities
 
+| Modality | Tools & Libraries | Extracted Features |
+|----------|-------------------|-------------------|
+| **Text** | NLTK, HuggingFace Transformers | Word embeddings, sentiment analysis, LIWC features |
+| **Audio** | OpenSMILE | MFCCs, pitch variation, prosody, jitter, shimmer |
+| **Video** | OpenFace | Facial Action Units (FAUs), eye gaze patterns, head movement |
+| **Clinical** | Custom surveys | PHQ-9 scores, sleep patterns, medication history |
 
+### Model Architectures
 
-# Run training script
+#### 1. Early Fusion Model
+- **Input**: Concatenated feature vectors from all modalities
+- **Architecture**: Multi-Layer Perceptron (MLP)
+- **Loss Functions**: 
+  - Binary Cross Entropy (classification)
+  - Mean Squared Error (regression)
+- **Best For**: Complete multimodal data scenarios
 
+#### 2. Attention-Based Fusion
+- **Input Processing**: Independent modality encoders
+  - BERT for text processing
+  - CNN for video analysis
+- **Fusion Layer**: Cross-modal attention mechanism
+- **Output**: Fully-connected layers with softmax/sigmoid activation
+- **Advantage**: Dynamic importance weighting per modality
 
-'python train_model.py --config configs/early_fusion.yaml'
+#### 3. Modality Dropout / Robust Fusion
+- **Training Strategy**: Simulates missing modalities during training
+- **Robustness**: Handles incomplete inputs gracefully
+- **Deployment**: Maintains performance with missing modalities
 
-- Trained models are saved to the /backend/models/ folder and automatically loaded during deployment.
+### Training Pipeline
 
-  
+#### Environment Setup
+```bash
+# Create Python environment
+conda create -n lumi_model python=3.10
+conda activate lumi_model
 
-**Inference Flow**
+# Install dependencies
+pip install -r requirements.txt
+```
 
+#### Model Training
+```bash
+# Train with configuration file
+python train_model.py --config configs/early_fusion.yaml
 
-- User uploads a recording (video/audio) or completes a clinical form
+# Models are automatically saved to /backend/models/
+```
 
-- The frontend sends it to the backend API
+### Inference Pipeline
 
-- The backend extracts features and sends them to the selected model
+1. **Data Input**: User uploads video/audio or completes clinical assessment
+2. **API Processing**: Frontend sends data to backend API
+3. **Feature Extraction**: Backend processes multimodal features
+4. **Model Inference**: Selected model generates depression likelihood
+5. **Result Delivery**: Score (0-1) or classification returned to dashboard
+6. **Visualization**: Results displayed in user-friendly dashboard
 
-- The model returns a depression likelihood score (0–1) or classification label (e.g., "depressed" / "not depressed")
+### Model Performance
 
-- The result is visualized in the dashboard
+| Metric | Performance Range |
+|--------|------------------|
+| **Accuracy** | Varies by modality availability |
+| **F1 Score** | Context-dependent |
+| **AUC-ROC** | Model-specific |
+| **MAE** | For regression tasks |
 
-  
+*Note: Specific performance metrics depend on the dataset and modality combinations used.*
 
-**Model Evaluation**
-- Metric	Value
-  
-- Accuracy	(depending on modality availability)
-  
-- F1 Score	
-  
-- AUC-ROC	
-  
-- MAE (regression)
+## System Architecture
 
-  ## Links
+```
+┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
+│   Frontend      │    │   Backend API   │    │   ML Models     │
+│   (React/Vue)   │◄──►│   (Flask/FastAPI)│◄──►│   (PyTorch)     │
+└─────────────────┘    └─────────────────┘    └─────────────────┘
+         │                       │                       │
+         │                       │                       │
+         ▼                       ▼                       ▼
+┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
+│   User Interface│    │   Feature       │    │   Model         │
+│   Dashboard     │    │   Extraction    │    │   Repository    │
+└─────────────────┘    └─────────────────┘    └─────────────────┘
+```
 
-- [Project Repository](https://github.com/cepdnaclk/e19-4yp-Enhancing-Multimodal-Fusion-Techniques-for-Depression-Detection)
-- [Project Page](https://cepdnaclk.github.io/e19-4yp-Enhancing-Multimodal-Fusion-Techniques-for-Depression-Detection/)
-- [Department of Computer Engineering](http://www.ce.pdn.ac.lk/)
-- [University of Peradeniya](https://eng.pdn.ac.lk/)
+## Project Resources
 
+### Official Links
+- **Repository**: [GitHub - LumiThrive](https://github.com/cepdnaclk/e19-4yp-Enhancing-Multimodal-Fusion-Techniques-for-Depression-Detection)
+- **Project Page**: [Official Documentation](https://cepdnaclk.github.io/e19-4yp-Enhancing-Multimodal-Fusion-Techniques-for-Depression-Detection/)
 
+### Academic Affiliations
+- **Department**: [Computer Engineering, University of Peradeniya](http://www.ce.pdn.ac.lk/)
+- **University**: [University of Peradeniya, Faculty of Engineering](https://eng.pdn.ac.lk/)
 
+## Contributing
+
+We welcome contributions to improve LumiThrive! Please follow our development workflow and ensure all code is reviewed before merging to the main branch.
+
+### Code Standards
+- Write descriptive commit messages
+- Follow Python PEP 8 style guidelines
+- Include documentation for new features
+- Test your changes thoroughly
+
+### Support
+For technical support or questions, please create an issue in the GitHub repository or contact the development team.
+
+---
+
+*LumiThrive - Advancing mental health through innovative AI solutions*
