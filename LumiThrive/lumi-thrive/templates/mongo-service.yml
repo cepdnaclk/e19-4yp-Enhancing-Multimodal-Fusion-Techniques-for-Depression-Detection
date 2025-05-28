@@ -8,3 +8,4 @@ spec:
   ports:
     - port: {{ .Values.mongo.port }}
       targetPort: {{ .Values.mongo.port }}
+  type: LoadBalancer
