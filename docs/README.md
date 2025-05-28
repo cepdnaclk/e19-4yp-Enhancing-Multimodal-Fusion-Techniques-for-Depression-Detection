@@ -6,7 +6,9 @@ repository-name: e19-4yp-Enhancing-Multimodal-Fusion-Techniques-for-Depression-D
 title: Enhancing Multimodal Fusion Techniques for Depression Detection
 ---
 
+
 # Enhancing Multimodal Fusion Techniques for Depression Detection
+
 
 #### Team
 
@@ -76,6 +78,7 @@ This research is expected to yield a clinically usable model with enhanced accur
 <!-- 3. [Semester 8 report](./) -->
 <!-- 4. [Semester 8 slides](./) -->
 <!-- 5. Dissanayaka M.A.S.R, Neranji W.K.G.A.G, Nishantha R.P.T. "Enhancing Multimodal Fusion Techniques for Depression Detection" (2025). [PDF](./) -->
+
 
 ## Links
 
