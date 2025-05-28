@@ -2,14 +2,11 @@
 layout: home
 permalink: index.html
 
-# Please update this with your repository name and title
-repository-name: eYY-4yp-project-template
-title:
+repository-name: e19-4yp-Enhancing-Multimodal-Fusion-Techniques-for-Depression-Detection
+title:Enhancing Multimodal Fusion Techniques for Depression Detection
 ---
 
-[comment]: # "This is the standard layout for the project, but you can clean this and use your own template"
-
-# Project Title
+# LumiThrive: Enhancing Multimodal Fusion Techniques for Depression Detection
 
 #### Team
 
@@ -35,33 +32,59 @@ title:
 
 ---
 
-<!-- 
-DELETE THIS SAMPLE before publishing to GitHub Pages !!!
-This is a sample image, to show how to add images to your page. To learn more options, please refer [this](https://projects.ce.pdn.ac.lk/docs/faq/how-to-add-an-image/)
-![Sample Image](./images/sample.png) 
--->
-
-
 ## Abstract
+
+The LumiThrive application is designed to detect depression using a multimodal fusion framework combining text, audio, video, and clinical features. It leverages deep learning models to predict depression likelihood and provides visual insights through a web dashboard.
 
 ## Related works
 
+<!-- Add literature review and related research here -->
+
 ## Methodology
+
+### Modalities and Feature Extraction
+
+| Modality | Tools Used | Features Extracted |
+|----------|-------------|--------------------|
+| **Text** | NLTK, HuggingFace Transformers | Word embeddings, sentiment scores, LIWC |
+| **Audio** | OpenSMILE | MFCCs, pitch, prosody, jitter, shimmer |
+| **Video** | OpenFace | Facial Action Units (FAUs), eye gaze, head movement |
+| **Clinical** | Manual / survey data | PHQ-9 score, sleep pattern, medication usage |
+
+### Model Architecture
+
+#### 1. **Early Fusion**
+- **Input**: Concatenated features from all modalities
+- **Model**: Multi-Layer Perceptron (MLP)
+- **Loss**: Binary Cross Entropy / MSE
+- **Use Case**: All modalities available
+
+#### 2. **Attention-Based Fusion**
+- **Input**: Separate encoders (e.g., BERT, CNN)
+- **Fusion**: Cross-modal attention
+- **Output**: Softmax/Sigmoid layers
+- **Advantage**: Learns modality importance dynamically
+
+#### 3. **Robust Fusion with Modality Dropout**
+- Handles missing modalities using dropout during training
+- Resilient to incomplete inputs at inference time
 
 ## Experiment Setup and Implementation
 
-## Results and Analysis
+### Application Deployment
 
-## Conclusion
+Follow these steps to run the LumiThrive project locally:
 
-## Publications
-[//]: # "Note: Uncomment each once you uploaded the files to the repository"
+1. **Install Docker Desktop**  
+   Download and install from the official [Docker website](https://www.docker.com/).
 
-<!-- 1. [Semester 7 report](./) -->
-<!-- 2. [Semester 7 slides](./) -->
-<!-- 3. [Semester 8 report](./) -->
-<!-- 4. [Semester 8 slides](./) -->
-<!-- 5. Author 1, Author 2 and Author 3 "Research paper title" (2021). [PDF](./). -->
+2. **Enable Kubernetes Cluster**  
+   In Docker Desktop:  
+   `Settings -> Kubernetes -> Enable Kubernetes`
+
+3. **Navigate to LumiThrive Folder**  
+   ```bash
+   cd /path/to/LumiThrive
 
 
 ## Links
