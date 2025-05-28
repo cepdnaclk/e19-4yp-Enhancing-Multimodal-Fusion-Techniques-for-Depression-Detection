@@ -8,8 +8,6 @@ title: Enhancing Multimodal Fusion Techniques for Depression Detection
 
 # Enhancing Multimodal Fusion Techniques for Depression Detection
 
----
-
 ## Dual Objectives
 
 ### Primary Research Goal
@@ -18,22 +16,18 @@ Develop an advanced **multimodal deep learning framework** for accurate depressi
 ### Clinical Application
 Build a comprehensive **counselor channeling web platform** integrated with intelligent chatbot-based depression screening to bridge the gap between detection and treatment.
 
----
-
 ## Research Team
 
-#### Team
+### Team Members
 
 - E/19/087, Dissanayaka M.A.S.R, [email](mailto:e19087@eng.pdn.ac.lk)
 - E/19/260, Neranji W.K.G.A.G, [email](mailto:e19260@eng.pdn.ac.lk)
 - E/19/264, Nishantha R.P.T, [email](mailto:e19264@eng.pdn.ac.lk)
 
-#### Supervisors
+### Supervisors
 
-- Prof Roshan Rage, [email](mailto:roshanr@eng.pdn.ac.lk)
+- Prof Roshan Ragel, [email](mailto:roshanr@eng.pdn.ac.lk)
 - Dhanushki Pavithya, [email](mailto:e14240@ce.pdn.ac.lk)
-
----
 
 ## Table of Contents
 
@@ -45,10 +39,8 @@ Build a comprehensive **counselor channeling web platform** integrated with inte
 6. [Experimental Results](#experimental-results)
 7. [Clinical Impact](#clinical-impact)
 8. [Future Work](#future-work)
-9. [Publications & Dissemination](#publications--dissemination)
-10. [Project Resources](#project-resources)
-
----
+9. [Publications](#publications)
+10. [Links](#links)
 
 ## Executive Summary
 
@@ -68,18 +60,16 @@ This research introduces a novel **hybrid multimodal fusion framework** that int
 - Enhanced accessibility to mental health resources
 - Foundation for personalized treatment planning
 
----
-
 ## Literature Review
 
 ### Current State of Research
 
-#### **Multimodal Detection Approaches**
+**Multimodal Detection Approaches**
 - CNN-based architectures for cross-modal feature extraction
 - Integration of textual, audio, and video modalities
 - Counselor channeling applications for professional referral systems
 
-#### **Modality-Specific Techniques**
+### Modality-Specific Techniques
 
 | **Modality** | **Current Methods** | **Limitations** |
 |--------------|---------------------|-----------------|
@@ -88,13 +78,11 @@ This research introduces a novel **hybrid multimodal fusion framework** that int
 | **Video** | CNN, ResNet-50 architectures | Insufficient temporal feature capture |
 | **Clinical** | MIMIC-III dataset utilization | Bias handling and data scarcity issues |
 
-#### **Identified Research Gaps**
+### Identified Research Gaps
 - **Fusion Limitations**: Predominant reliance on early/late fusion with limited dataset diversity
 - **Generalization Issues**: Poor performance across different populations and clinical settings
 - **Integration Challenges**: Lack of comprehensive multimodal frameworks
 - **Clinical Applicability**: Insufficient validation for real-world deployment
-
----
 
 ## Research Methodology
 
@@ -102,7 +90,7 @@ This research introduces a novel **hybrid multimodal fusion framework** that int
 
 Our methodology employs a sophisticated deep learning architecture combining CNNs with advanced target-level fusion techniques:
 
-#### **1. Data Acquisition & Preprocessing**
+### Data Acquisition and Preprocessing
 
 **Primary Datasets:**
 - **DAIC-WOZ**: Distress Analysis Interview Corpus for multimodal analysis
@@ -114,7 +102,7 @@ Our methodology employs a sophisticated deep learning architecture combining CNN
 - **Visual Information**: Facial expressions, micro-expressions, behavioral cues
 - **Clinical Records**: Medical history, PHQ-9 scores, treatment documentation
 
-#### **2. Feature Extraction Pipeline**
+### Feature Extraction Pipeline
 
 | **Modality** | **Extraction Method** | **Key Features** |
 |--------------|----------------------|------------------|
@@ -123,7 +111,7 @@ Our methodology employs a sophisticated deep learning architecture combining CNN
 | **Video** | OpenFace Toolkit | Facial Action Units (FAUs), eye gaze patterns, head pose dynamics |
 | **Clinical** | BioBERT Embeddings | Medical terminology understanding, clinical note analysis |
 
-#### **3. Advanced Fusion Strategies**
+### Advanced Fusion Strategies
 
 **Multi-Level Fusion Approach:**
 - **Early Fusion**: Feature-level concatenation for joint representation learning
@@ -131,7 +119,7 @@ Our methodology employs a sophisticated deep learning architecture combining CNN
 - **Hybrid Fusion**: Adaptive weighted combination based on modality reliability
 - **Target-Level Fusion**: Learned importance weighting for optimal feature integration
 
-#### **4. Model Architecture Design**
+### Model Architecture Design
 
 **Core Components:**
 - **Modality-Specific Encoders**: CNN-based feature extraction networks
@@ -139,13 +127,11 @@ Our methodology employs a sophisticated deep learning architecture combining CNN
 - **Fusion Network**: Adaptive weight learning for modality integration
 - **Output Layer**: Depression severity scoring and binary classification
 
----
-
 ## System Architecture
 
-### **1. Early Fusion Architecture**
+### Early Fusion Architecture
 
-![Early Fusion Model Architecture](./images/arc01.png)
+<img src="./images/arc01.png" alt="Early Fusion Model Architecture" width="400">
 
 **Design Philosophy:**
 The Early Fusion model creates unified multimodal representations by combining features from all input modalities at the initial processing stage. This architecture enables the model to learn complex inter-modal relationships from the ground up, potentially capturing subtle correlations between different data streams that might be missed in later fusion approaches.
@@ -155,9 +141,9 @@ The Early Fusion model creates unified multimodal representations by combining f
 - Comprehensive inter-modal relationship capture
 - Unified representation space for decision making
 
-### **2. Late Fusion Architecture**
+### Late Fusion Architecture
 
-![Late Fusion Model Architecture](./images/arc02.png)
+<img src="./images/arc02.png" alt="Late Fusion Model Architecture" width="400">
 
 **Design Philosophy:**
 The Late Fusion model processes each modality through specialized, independent neural networks before combining their outputs at the decision level. This approach allows for modality-specific optimization and specialized feature extraction, with each pathway contributing its expertise to the final diagnostic decision.
@@ -167,32 +153,30 @@ The Late Fusion model processes each modality through specialized, independent n
 - Independent optimization of modality-specific features
 - Flexible integration of diverse prediction confidences
 
-### **3. Hybrid Fusion Framework**
+### Hybrid Fusion Framework
 
 **Advanced Integration Strategy:**
 Our novel hybrid approach combines the strengths of both early and late fusion through an adaptive weighting mechanism that learns optimal combination strategies based on input characteristics and modality reliability.
 
----
-
 ## Implementation Details
 
-### **Technology Stack**
+### Technology Stack
 
-#### **Core ML Framework**
+**Core ML Framework**
 - **Primary Language**: Python 3.10+
-- **Deep Learning**: PyTorch with CUDA acceleration
+- **Deep Learning**: PyTorch with CUDA acceleration tensorflow
 - **NLP Processing**: HuggingFace Transformers, NLTK
 - **Model Training**: Scikit-learn, PyTorch Lightning
 - **Feature Extraction**: OpenFace, EDIAOZ, BioBERT
 
-#### **Web Application Stack**
+**Web Application Stack**
 - **Frontend**: React.js with Material-UI components
 - **Backend**: Node.js with Express.js framework
 - **Database**: MongoDB for user data and session management
 - **API Integration**: RESTful services for model inference
 - **Deployment**: Docker containerization with Kubernetes orchestration
 
-#### **Development Workflow**
+### Development Workflow
 ```bash
 # Environment Setup
 conda create -n lumithrive python=3.10
@@ -206,27 +190,21 @@ python train_multimodal_model.py --config configs/hybrid_fusion.yaml
 docker-compose up --build
 ```
 
-### **Model Training Pipeline**
+### Model Training Pipeline
 
 **Training Configuration:**
-- **Batch Size**: 32 (adjustable based on GPU memory)
-- **Learning Rate**: 1e-4 with cosine annealing
-- **Optimization**: AdamW with weight decay
-- **Regularization**: Dropout (0.3) and batch normalization
-- **Early Stopping**: Patience of 10 epochs on validation loss
+
 
 **Data Augmentation Strategies:**
 - Audio: Noise injection, time stretching, pitch shifting
 - Video: Frame sampling, temporal jittering, brightness variation
 - Text: Synonym replacement, back-translation augmentation
 
----
-
 ## Experimental Results
 
-### **Performance Metrics**
+### Performance Metrics
 
-*[Note: Results will be updated following completion of experimental phase]*
+*Note: Results will be updated following completion of experimental phase*
 
 **Evaluation Framework:**
 - **Classification Metrics**: Accuracy, Precision, Recall, F1-Score
@@ -240,7 +218,7 @@ docker-compose up --build
 - **Specificity**: >80% to minimize false positives
 - **Multimodal vs. Unimodal**: >15% improvement with fusion approaches
 
-### **Ablation Studies**
+### Ablation Studies
 
 **Planned Experiments:**
 1. **Modality Importance Analysis**: Individual and combined modality performance
@@ -248,11 +226,9 @@ docker-compose up --build
 3. **Architecture Sensitivity**: Impact of network depth and attention mechanisms
 4. **Dataset Generalization**: Cross-dataset validation and transfer learning
 
----
-
 ## Clinical Impact
 
-### **Healthcare Integration**
+### Healthcare Integration
 
 **Clinical Workflow Enhancement:**
 - **Automated Screening**: Rapid initial assessment for large patient populations
@@ -260,7 +236,7 @@ docker-compose up --build
 - **Progress Monitoring**: Longitudinal tracking of patient mental health status
 - **Resource Allocation**: Efficient triage and referral system optimization
 
-### **Accessibility Improvements**
+### Accessibility Improvements
 
 **Democratizing Mental Health Care:**
 - **Remote Assessment**: Telemedicine-compatible depression screening
@@ -268,7 +244,7 @@ docker-compose up --build
 - **Cultural Sensitivity**: Training on diverse demographic datasets
 - **Cost Reduction**: Decreased burden on mental health professionals
 
-### **Ethical Considerations**
+### Ethical Considerations
 
 **Responsible AI Development:**
 - **Privacy Protection**: HIPAA-compliant data handling and storage
@@ -276,25 +252,12 @@ docker-compose up --build
 - **Transparency**: Explainable AI techniques for clinical decision support
 - **Human Oversight**: Integration with professional clinical judgment
 
----
-
 ## Future Work
 
-### **Research Extensions**
+### Research Extensions
 
-**Short-term Objectives (6-12 months):**
-- Integration with wearable device data (heart rate, sleep patterns)
-- Real-time streaming analysis for continuous monitoring
-- Mobile application development for broader accessibility
-- Clinical trial validation with partner healthcare institutions
 
-**Long-term Vision (2-5 years):**
-- Personalized treatment recommendation system
-- Integration with electronic health record (EHR) systems
-- Longitudinal patient outcome prediction
-- Expansion to other mental health conditions (anxiety, PTSD)
-
-### **Technical Innovations**
+### Technical Innovations
 
 **Advanced Modeling Approaches:**
 - **Federated Learning**: Privacy-preserving distributed model training
@@ -302,7 +265,17 @@ docker-compose up --build
 - **Transformer Architectures**: Enhanced attention mechanisms for multimodal fusion
 - **Continual Learning**: Adaptive models that improve with new data
 
----
+## Publications
+
+*Publications will be added upon completion of experimental phases and peer review process*
+
+<!-- Future publications will be listed here:
+1. [Semester 7 Technical Report](./)
+2. [Midterm Presentation Slides](./)
+3. [Final Thesis Document](./)
+4. [Defense Presentation](./)
+5. Dissanayaka M.A.S.R, Neranji W.K.G.A.G, Nishantha R.P.T. "Enhancing Multimodal Fusion Techniques for Depression Detection" (2025). [PDF](./)
+-->
 
 ## Links
 
