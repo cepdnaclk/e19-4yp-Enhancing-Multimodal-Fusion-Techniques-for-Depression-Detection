@@ -6,9 +6,12 @@ repository-name: e19-4yp-Enhancing-Multimodal-Fusion-Techniques-for-Depression-D
 title: Enhancing Multimodal Fusion Techniques for Depression Detection
 ---
 
-
 # Enhancing Multimodal Fusion Techniques for Depression Detection
 
+## Dual Objectives
+
+- Develop a **multimodal deep learning model** for depression detection using CNN and fusion techniques.
+- Build a **counselor channeling web application** integrated with chatbot-based depression screening.
 
 #### Team
 
@@ -41,19 +44,34 @@ The project aims to enhance depression detection using multimodal data fusion te
 
 ## Related works
 
+- **Multimodal depression detection using CNNs** across text, audio, and video modalities.
+- **Counselor channeling application** developed for screening and connecting users to professionals.
 - Text-based detection using LSTM, BERT, GPT.
 - Audio-based detection with CNNs, LSTMs, Wav2Vec.
 - Video-based detection with CNN, ResNet-50.
 - Clinical data use from MIMIC-III, leveraging medical history and notes.
-- Limitations include lack of emotional depth, generalization, and bias handling.
-- Existing multimodal models often rely on limited datasets and early/late fusion.
+- Limitations in existing works include lack of emotional depth, poor generalization, and bias handling.
+- Previous fusion models relied mostly on early or late fusion with limited datasets.
 
 ## Methodology
 
+We employ a multimodal deep learning framework combining CNNs and target-level fusion techniques. The workflow includes:
+
+1. **Data Collection:** Using DAIC-WOZ and MIMIC-III datasets for text, audio, video, and clinical data.
+2. **Feature Extraction:**
+   - **Text:** Sentiment scores and linguistic features using LIWC and HuggingFace Transformers.
+   - **Audio:** Acoustic features (pitch, MFCC, jitter) extracted using **EDIAOZ**.
+   - **Video:** Facial Action Units and visual cues extracted via OpenFace.
+   - **Clinical:** Medical notes and survey results embedded using **BioBERT**.
+3. **Fusion Strategies:**
+   - Early, late, and hybrid fusion approaches.
+   - Target-level weighted fusion using learned modality importance.
+4. **Modeling:**
+   - CNN-based feature encoders per modality.
+   - Attention-based fusion network to learn inter-modal dependencies.
+   - Output as depression severity score or binary classification.
 
 ## Model Architecture
-
-Below are the architectural diagrams of our proposed multimodal fusion models:
 
 ### 1. Early Fusion Model Architecture
 
@@ -67,12 +85,14 @@ Below are the architectural diagrams of our proposed multimodal fusion models:
 
 *Figure 2: The Late Fusion model processes each modality independently through separate models and combines their outputs at the decision level. This enables each modality to contribute its own prediction before the final decision is made, allowing for more specialized feature extraction per modality.*
 
-
 ## Experiment Setup and Implementation
 
-- Model architectures using fully connected layers and target-level fusion.
-- Emphasis on extracting deep multimodal features for better performance.
-- Plan to develop a web-based counselor channeling app with chatbot-driven detection and optional user data contribution.
+- Built on Python using PyTorch, HuggingFace, and Scikit-learn.
+- Model architectures use CNNs and attention-based fusion.
+- Feature extraction and preprocessing performed using EDIAOZ, OpenFace, and BioBERT.
+- Backend system integrates the trained model for inference.
+- Web-based counselor channeling application developed using MERN stack.
+- Chatbot-based screening integrates model inference for real-time analysis.
 
 ## Results and Analysis
 
@@ -80,7 +100,7 @@ Below are the architectural diagrams of our proposed multimodal fusion models:
 
 ## Conclusion
 
-This research is expected to yield a clinically usable model with enhanced accuracy in depression detection, leveraging deep multimodal feature fusion and enriched datasets.
+This research is expected to yield a clinically usable model with enhanced accuracy in depression detection, leveraging deep multimodal feature fusion and enriched datasets. The complementary counselor channeling platform enhances accessibility to mental health support.
 
 ## Publications
 
@@ -97,4 +117,3 @@ This research is expected to yield a clinically usable model with enhanced accur
 - [Project Page](https://cepdnaclk.github.io/e19-4yp-Enhancing-Multimodal-Fusion-Techniques-for-Depression-Detection/)
 - [Department of Computer Engineering](http://www.ce.pdn.ac.lk/)
 - [University of Peradeniya](https://eng.pdn.ac.lk/)
-
