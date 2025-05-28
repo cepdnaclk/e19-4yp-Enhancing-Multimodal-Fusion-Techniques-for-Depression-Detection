@@ -3,7 +3,7 @@ layout: home
 permalink: index.html
 
 repository-name: e19-4yp-Enhancing-Multimodal-Fusion-Techniques-for-Depression-Detection
-title:Enhancing Multimodal Fusion Techniques for Depression Detection
+title: Enhancing Multimodal Fusion Techniques for Depression Detection
 ---
 
 # LumiThrive: Enhancing Multimodal Fusion Techniques for Depression Detection
