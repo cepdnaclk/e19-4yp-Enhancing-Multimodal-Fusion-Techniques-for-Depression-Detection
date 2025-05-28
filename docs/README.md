@@ -6,13 +6,11 @@ repository-name: e19-4yp-Enhancing-Multimodal-Fusion-Techniques-for-Depression-D
 title: Enhancing Multimodal Fusion Techniques for Depression Detection
 ---
 
-# LumiThrive: Enhancing Multimodal Fusion Techniques for Depression Detection
-
-> *Advancing mental health diagnosis through innovative AI-powered multimodal analysis*
+# Enhancing Multimodal Fusion Techniques for Depression Detection
 
 ---
 
-## 🎯 Dual Objectives
+## Dual Objectives
 
 ### Primary Research Goal
 Develop an advanced **multimodal deep learning framework** for accurate depression detection utilizing CNN architectures and sophisticated fusion techniques across multiple data modalities.
@@ -22,24 +20,22 @@ Build a comprehensive **counselor channeling web platform** integrated with inte
 
 ---
 
-## 👥 Research Team
+## Research Team
 
-### Core Development Team
-| Student ID | Name | Role | Contact |
-|------------|------|------|---------|
-| **E/19/087** | M.A.S.R. Dissanayaka | Lead ML Engineer | [e19087@eng.pdn.ac.lk](mailto:e19087@eng.pdn.ac.lk) |
-| **E/19/260** | W.K.G.A.G. Neranji | Full-Stack Developer | [e19260@eng.pdn.ac.lk](mailto:e19260@eng.pdn.ac.lk) |
-| **E/19/264** | R.P.T. Nishantha | Data Scientist | [e19264@eng.pdn.ac.lk](mailto:e19264@eng.pdn.ac.lk) |
+#### Team
 
-### Academic Supervision
-| Role | Name | Contact |
-|------|------|---------|
-| **Principal Supervisor** | Prof. Roshan Ragel | [roshanr@eng.pdn.ac.lk](mailto:roshanr@eng.pdn.ac.lk) |
-| **Co-Supervisor** | Dr. Dhanushki Pavithya | [e14240@ce.pdn.ac.lk](mailto:e14240@ce.pdn.ac.lk) |
+- E/19/087, Dissanayaka M.A.S.R, [email](mailto:e19087@eng.pdn.ac.lk)
+- E/19/260, Neranji W.K.G.A.G, [email](mailto:e19260@eng.pdn.ac.lk)
+- E/19/264, Nishantha R.P.T, [email](mailto:e19264@eng.pdn.ac.lk)
+
+#### Supervisors
+
+- Prof Roshan Rage, [email](mailto:roshanr@eng.pdn.ac.lk)
+- Dhanushki Pavithya, [email](mailto:e14240@ce.pdn.ac.lk)
 
 ---
 
-## 📑 Table of Contents
+## Table of Contents
 
 1. [Executive Summary](#executive-summary)
 2. [Literature Review](#literature-review)
@@ -54,7 +50,7 @@ Build a comprehensive **counselor channeling web platform** integrated with inte
 
 ---
 
-## 📋 Executive Summary
+## Executive Summary
 
 ### Problem Statement
 Current depression detection systems suffer from limited accuracy, poor generalization across diverse populations, and insufficient integration of multimodal data sources. Existing approaches fail to meet clinical requirements for reliable mental health assessment.
@@ -74,7 +70,7 @@ This research introduces a novel **hybrid multimodal fusion framework** that int
 
 ---
 
-## 🔬 Literature Review
+## Literature Review
 
 ### Current State of Research
 
@@ -100,7 +96,7 @@ This research introduces a novel **hybrid multimodal fusion framework** that int
 
 ---
 
-## 🔬 Research Methodology
+## Research Methodology
 
 ### Comprehensive Multimodal Framework
 
@@ -145,7 +141,7 @@ Our methodology employs a sophisticated deep learning architecture combining CNN
 
 ---
 
-## 🏗️ System Architecture
+## System Architecture
 
 ### **1. Early Fusion Architecture**
 
@@ -178,7 +174,7 @@ Our novel hybrid approach combines the strengths of both early and late fusion t
 
 ---
 
-## 💻 Implementation Details
+## Implementation Details
 
 ### **Technology Stack**
 
@@ -226,7 +222,7 @@ docker-compose up --build
 
 ---
 
-## 📊 Experimental Results
+## Experimental Results
 
 ### **Performance Metrics**
 
@@ -254,7 +250,7 @@ docker-compose up --build
 
 ---
 
-## 🏥 Clinical Impact
+## Clinical Impact
 
 ### **Healthcare Integration**
 
@@ -282,7 +278,7 @@ docker-compose up --build
 
 ---
 
-## 🚀 Future Work
+## Future Work
 
 ### **Research Extensions**
 
