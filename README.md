@@ -105,23 +105,38 @@ The application supports the following modeling strategies:
 
 # Run training script
 
+
    -python train_model.py --config configs/early_fusion.yaml
    
    -Trained models are saved to the /backend/models/ folder and automatically loaded during deployment.
 
 **Inference Flow**
 
-   -User uploads a recording (video/audio) or completes a clinical form
-   
-   -The frontend sends it to the backend API
-   
-   -The backend extracts features and sends them to the selected model
-   
-   -The model returns a depression likelihood score (0–1) or classification label (e.g., "depressed" / "not depressed")
-   
-   -The result is visualized in the dashboard
+
+- User uploads a recording (video/audio) or completes a clinical form
+
+- The frontend sends it to the backend API
+
+- The backend extracts features and sends them to the selected model
+
+- The model returns a depression likelihood score (0–1) or classification label (e.g., "depressed" / "not depressed")
+
+- The result is visualized in the dashboard
 
 **Model Evaluation**
+- Metric	Value
+  
+- Accuracy	(depending on modality availability)
+  
+- F1 Score	
+  
+- AUC-ROC	
+  
+- MAE (regression)
+
+**Notes**
+Models are trained on the DAIC-WOZ dataset
+
 
    Metric	Value
    -Accuracy (depending on modality availability)
