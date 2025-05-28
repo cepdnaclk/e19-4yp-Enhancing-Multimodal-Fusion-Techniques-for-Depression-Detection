@@ -6,7 +6,9 @@ repository-name: e19-4yp-Enhancing-Multimodal-Fusion-Techniques-for-Depression-D
 title: Enhancing Multimodal Fusion Techniques for Depression Detection
 ---
 
+
 # Enhancing Multimodal Fusion Techniques for Depression Detection
+
 
 #### Team
 
@@ -35,9 +37,19 @@ title: Enhancing Multimodal Fusion Techniques for Depression Detection
 
 ## Abstract
 
+The project aims to enhance depression detection using multimodal data fusion techniques by integrating text, audio, video, and clinical data. The approach addresses limitations in existing models such as lack of generalization and insufficient accuracy for clinical applications. By employing hybrid and target-level fusion mechanisms, the proposed model seeks to improve detection accuracy and provide a foundation for personalized treatment plans.
+
 ## Related works
 
+- Text-based detection using LSTM, BERT, GPT.
+- Audio-based detection with CNNs, LSTMs, Wav2Vec.
+- Video-based detection with CNN, ResNet-50.
+- Clinical data use from MIMIC-III, leveraging medical history and notes.
+- Limitations include lack of emotional depth, generalization, and bias handling.
+- Existing multimodal models often rely on limited datasets and early/late fusion.
+
 ## Methodology
+
 
 ## Model Architecture
 
@@ -55,27 +67,34 @@ Below are the architectural diagrams of our proposed multimodal fusion models:
 
 *Figure 2: The Late Fusion model processes each modality independently through separate models and combines their outputs at the decision level. This enables each modality to contribute its own prediction before the final decision is made, allowing for more specialized feature extraction per modality.*
 
+
 ## Experiment Setup and Implementation
+
+- Model architectures using fully connected layers and target-level fusion.
+- Emphasis on extracting deep multimodal features for better performance.
+- Plan to develop a web-based counselor channeling app with chatbot-driven detection and optional user data contribution.
 
 ## Results and Analysis
 
+(Results to be updated after experimentation phase.)
+
 ## Conclusion
 
-## Publications
-[//]: # "Note: Uncomment each once you uploaded the files to the repository"
+This research is expected to yield a clinically usable model with enhanced accuracy in depression detection, leveraging deep multimodal feature fusion and enriched datasets.
 
+## Publications
+
+<!-- Uncomment when available -->
 <!-- 1. [Semester 7 report](./) -->
 <!-- 2. [Semester 7 slides](./) -->
 <!-- 3. [Semester 8 report](./) -->
 <!-- 4. [Semester 8 slides](./) -->
-<!-- 5. Author 1, Author 2 and Author 3 "Research paper title" (2021). [PDF](./). -->
+<!-- 5. Dissanayaka M.A.S.R, Neranji W.K.G.A.G, Nishantha R.P.T. "Enhancing Multimodal Fusion Techniques for Depression Detection" (2025). [PDF](./) -->
 
 ## Links
 
 - [Project Repository](https://github.com/cepdnaclk/e19-4yp-Enhancing-Multimodal-Fusion-Techniques-for-Depression-Detection)
-- [Project Page](https://cepdnaclk.github.io/e19-4yp-Enhancing-Multimodal-Fusion-Techniques-for-Depression-Detection)
+- [Project Page](https://cepdnaclk.github.io/e19-4yp-Enhancing-Multimodal-Fusion-Techniques-for-Depression-Detection/)
 - [Department of Computer Engineering](http://www.ce.pdn.ac.lk/)
 - [University of Peradeniya](https://eng.pdn.ac.lk/)
 
-[//]: # "Please refer this to learn more about Markdown syntax"
-[//]: # "https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet"
