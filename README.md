@@ -1,176 +1,120 @@
-# LumiThrive - Multimodal Depression Detection System
+# Enhancing Multimodal Fusion Techniques for Depression Detection
 
 ## Overview
+This project focuses on advancing multimodal fusion techniques for depression detection by addressing key challenges and integrating clinical data into the system. Our main contributions include:
+- **Handling Missing Modalities:** Developing methods to manage incomplete data when some modalities are absent, ensuring robust performance.
+- **Addressing Class Imbalance:** Removing or balancing classes in datasets to prevent overfitting and improve generalization.
+- **Incorporating Clinical Data:** Extracting clinically relevant information from transcripts to enhance the accuracy of depression detection.
+- **Counselor Channeling Web Application:** Building a web platform that allows users to connect with counselors and monitor depression status.
+- **Chatbot Integration:** Providing an interactive chatbot that asks questions, gathers user responses, and predicts depression levels based on answers.
 
-LumiThrive is a cutting-edge application that leverages multimodal fusion techniques to detect depression using audio, video, text, and clinical data. The system employs advanced machine learning models built with PyTorch and scikit-learn to provide accurate depression assessment.
+## System Workflow
+1. **Data Processing & Model Training**
+   - Preprocessing multimodal data (audio, video, text, clinical).
+   - Handling missing modalities and class imbalance.
+   - Incorporating clinical data extracted from transcripts.
+   - Training deep learning models using Python, PyTorch, etc.
+2. **Web Application**
+   - Frontend developed with React.
+   - Backend built with Spring Boot.
+   - Users can connect with counselors, view depression assessments, and interact with the chatbot.
+3. **Deployment & Infrastructure**
+   - Containerization using Docker and Kubernetes.
+   - Cloud deployment on AWS:
+     - S3 for storing videos and preprocessed data.
+     - Lambda functions for triggering preprocessing tasks.
 
-## Quick Start Guide
+## Web Application High-Level Architecture
 
-### Prerequisites
+### System Architecture Overview
+The web application follows a microservices architecture pattern with clear separation of concerns between frontend, backend, and AI processing components.
 
-- Docker Desktop installed and running
-- Git for version control
-- Terminal/Command Line access
 
-### Deployment Steps
 
-#### 1. Install Docker Desktop
+### Component Architecture
 
-Download and install Docker Desktop from the [official website](https://www.docker.com/products/docker-desktop).
+#### Frontend Layer (React.js)
+- **User Dashboard**: Personal depression assessment history and trends
+- **Counselor Portal**: Interface for mental health professionals
+- **Chatbot Interface**: Interactive depression screening questionnaire
+- **Real-time Communication**: WebSocket integration for counselor-patient communication
+- **File Upload Components**: Secure upload for audio/video data
+- **Authentication Module**: User login, registration, and session management
 
-#### 2. Configure Kubernetes
+#### Backend Layer (Spring Boot)
+- **Ingress Controller**: RESTful endpoints for frontend communication
+- **Authentication Service**: JWT-based user authentication and authorization
+- **User Management Service**: User profiles, roles, and permissions
+- **Counselor Matching Service**: Algorithm-based counselor assignment
+- **Session Management**: Counseling session scheduling and tracking
+- **Data Processing Coordinator**: Orchestrates AI model inference requests
+- **Notification Service**: Email/SMS notifications for appointments and results
 
-1. Open Docker Desktop
-2. Navigate to **Settings** → **Kubernetes**
-3. Enable the Kubernetes cluster
-4. Wait for the setup to complete
+#### AI Processing Layer (Python)
+- **Model Inference API**: Serves trained depression detection models
+- **Multimodal Fusion Service**: Combines audio, video, and text predictions
+- **Feature Extraction Services**: Processes raw data into model-ready features
 
-#### 3. Project Setup
+#### Cloud Infrastructure (AWS)
+- **S3 Storage**: Raw and processed multimedia files
+- **Lambda Functions**: Serverless data preprocessing triggers
 
-```bash
-# Navigate to the project directory
-cd /path/to/LumiThrive
+## Data Preprocessing Methods
 
-# Make deployment script executable
-chmod +x deploy.sh
+### Audio Data Preprocessing
 
-# Run deployment
-./deploy.sh
-```
+#### Raw Audio Processing
 
-#### 4. Access the Application
 
-- **Frontend**: [http://localhost:80](http://localhost:80)
-- **Backend API**: [http://backend:4000](http://backend:4000)
+### Video Data Preprocessing
 
-## Development Workflow
 
-### Repository Management
+### Text Data Preprocessing
 
-#### Initial Setup
-```bash
-# Clone the repository
-git clone git@github.com:your-org-or-username/LumiThrive.git
 
-# Navigate to project directory
-cd LumiThrive
+### Clinical Data Preprocessing
 
-# Checkout your development branch (using your E-number)
-git checkout e19087
-```
 
-#### Development Cycle
-```bash
-# Stage changes
-git add .
+### Multimodal Data Integration
 
-# Commit with descriptive message
-git commit -m "feat: add multimodal attention mechanism"
 
-# Push to your branch
-git push origin e19087
-```
 
-#### Code Integration
-1. Create a Pull Request (PR) from your branch to `main`
-2. **⚠️ Important**: Never merge to `main` without team approval
-3. Request code review from team members
-4. Address feedback before merging
 
-## Machine Learning Architecture
+## Tech Stack
+| Component | Technologies |
+| --------- | ------------ |
+| Modal Training & Preprocessing | Python, PyTorch, NumPy, Pandas, ... |
+| Frontend Development | React.js |
+| Backend Development | Spring Boot (Java), Flask |
+| Containerization & Deployment | Docker, Kubernetes, AWS S3, AWS Lambda |
 
-### Supported Modalities
+## Features
+- Multimodal data fusion handling missing modalities.
+- Dataset balancing to prevent overfitting.
+- Clinical data extraction from transcripts for improved accuracy.
+- Counselor channeling through a user-friendly web interface.
+- Interactive chatbot for depression screening based on user responses.
+- Cloud-based scalable deployment.
 
-| Modality | Tools & Libraries | Extracted Features |
-|----------|-------------------|-------------------|
-| **Text** | NLTK, HuggingFace Transformers | Word embeddings, sentiment analysis, LIWC features |
-| **Audio** | OpenSMILE | MFCCs, pitch variation, prosody, jitter, shimmer |
-| **Video** | OpenFace | Facial Action Units (FAUs), eye gaze patterns, head movement |
-| **Clinical** | Custom surveys | PHQ-9 scores, sleep patterns, medication history |
+## Installation & Usage
+---
 
-### Model Architectures
+## Research Team
+### Team Members
+- E/19/087, Dissanayaka M.A.S.R, [email](mailto:e19087@eng.pdn.ac.lk)
+- E/19/260, Neranji W.K.G.A.G, [email](mailto:e19260@eng.pdn.ac.lk)
+- E/19/264, Nishantha R.P.T, [email](mailto:e19264@eng.pdn.ac.lk)
 
-#### 1. Early Fusion Model
-- **Input**: Concatenated feature vectors from all modalities
-- **Architecture**: Multi-Layer Perceptron (MLP)
-- **Loss Functions**: 
-  - Binary Cross Entropy (classification)
-  - Mean Squared Error (regression)
-- **Best For**: Complete multimodal data scenarios
+### Supervisors
+- Prof Roshan Ragel, [email](mailto:roshanr@eng.pdn.ac.lk)
+- Dhanushki Pavithya, [email](mailto:e14240@ce.pdn.ac.lk)
 
-#### 2. Attention-Based Fusion
-- **Input Processing**: Independent modality encoders
-  - BERT for text processing
-  - CNN for video analysis
-- **Fusion Layer**: Cross-modal attention mechanism
-- **Output**: Fully-connected layers with softmax/sigmoid activation
-- **Advantage**: Dynamic importance weighting per modality
+---
 
-#### 3. Modality Dropout / Robust Fusion
-- **Training Strategy**: Simulates missing modalities during training
-- **Robustness**: Handles incomplete inputs gracefully
-- **Deployment**: Maintains performance with missing modalities
+## Links
+- [Project Repository](https://github.com/cepdnaclk/e19-4yp-Enhancing-Multimodal-Fusion-Techniques-for-Depression-Detection)
+- [Project Page](https://cepdnaclk.github.io/e19-4yp-Enhancing-Multimodal-Fusion-Techniques-for-Depression-Detection/)
+- [Department of Computer Engineering](http://www.ce.pdn.ac.lk/)
+- [University of Peradeniya](https://eng.pdn.ac.lk/)
 
-### Training Pipeline
-
-#### Environment Setup
-```bash
-# Create Python environment
-conda create -n lumi_model python=3.10
-conda activate lumi_model
-
-# Install dependencies
-pip install -r requirements.txt
-```
-
-#### Model Training
-```bash
-# Train with configuration file
-python train_model.py --config configs/early_fusion.yaml
-
-# Models are automatically saved to /backend/models/
-```
-
-### Inference Pipeline
-
-1. **Data Input**: User uploads video/audio or completes clinical assessment
-2. **API Processing**: Frontend sends data to backend API
-3. **Feature Extraction**: Backend processes multimodal features
-4. **Model Inference**: Selected model generates depression likelihood
-5. **Result Delivery**: Score (0-1) or classification returned to dashboard
-6. **Visualization**: Results displayed in user-friendly dashboard
-
-### Model Performance
-
-| Metric | Performance Range |
-|--------|------------------|
-| **Accuracy** | Varies by modality availability |
-| **F1 Score** | Context-dependent |
-| **AUC-ROC** | Model-specific |
-| **MAE** | For regression tasks |
-
-*Note: Specific performance metrics depend on the dataset and modality combinations used.*
-
-## System Architecture
-
-```
-┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
-│   Frontend      │    │   Backend API   │    │   ML Models     │
-│   (React/Vue)   │◄──►│   (Flask/FastAPI)│◄──►│   (PyTorch)     │
-└─────────────────┘    └─────────────────┘    └─────────────────┘
-         │                       │                       │
-         │                       │                       │
-         ▼                       ▼                       ▼
-┌─────────────────┐    ┌─────────────────┐    ┌─────────────────┐
-│   User Interface│    │   Feature       │    │   Model         │
-│   Dashboard     │    │   Extraction    │    │   Repository    │
-└─────────────────┘    └─────────────────┘    └─────────────────┘
-```
-
-## Project Resources
-
-### Official Links
-- **Repository**: [GitHub - LumiThrive](https://github.com/cepdnaclk/e19-4yp-Enhancing-Multimodal-Fusion-Techniques-for-Depression-Detection)
-- **Project Page**: [Official Documentation](https://cepdnaclk.github.io/e19-4yp-Enhancing-Multimodal-Fusion-Techniques-for-Depression-Detection/)
-- **Department**: [Computer Engineering, University of Peradeniya](http://www.ce.pdn.ac.lk/)
-- **University**: [University of Peradeniya, Faculty of Engineering](https://eng.pdn.ac.lk/)
+---
