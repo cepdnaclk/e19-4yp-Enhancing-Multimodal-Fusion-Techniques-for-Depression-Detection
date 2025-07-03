@@ -29,6 +29,9 @@ This project focuses on advancing multimodal fusion techniques for depression de
 ### System Architecture Overview
 The web application follows a microservices architecture pattern with clear separation of concerns between frontend, backend, and AI processing components.
 
+<div align="center">
+  <img src="./images/architecture-diagram.png" alt="System Architecture Diagram" width="800">
+</div>
 
 
 ### Component Architecture
