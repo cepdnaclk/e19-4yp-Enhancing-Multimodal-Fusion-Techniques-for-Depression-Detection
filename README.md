@@ -61,21 +61,13 @@ The web application follows a microservices architecture pattern with clear sepa
 
 ## Data Preprocessing Methods
 
-### Audio Data Preprocessing
-
-#### Raw Audio Processing
-
-
-### Video Data Preprocessing
-
-
-### Text Data Preprocessing
-
-
-### Clinical Data Preprocessing
-
-
-### Multimodal Data Integration
+| Data Type | Preprocessing Method | Description |
+|-----------|---------------------|-------------|
+| **Audio Data Preprocessing** | | |
+| **Video Data Preprocessing** | | |
+| **Text Data Preprocessing** | | |
+| **Clinical Data Preprocessing** | | |
+| **Multimodal Data Integration** | | |
 
 
 
