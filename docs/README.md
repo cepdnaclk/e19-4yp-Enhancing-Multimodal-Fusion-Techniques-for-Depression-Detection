@@ -1,11 +1,3 @@
----
-layout: home
-permalink: index.html
-
-repository-name: e19-4yp-Enhancing-Multimodal-Fusion-Techniques-for-Depression-Detection
-title: Enhancing Multimodal Fusion Techniques for Depression Detection
----
-
 # Enhancing Multimodal Fusion Techniques for Depression Detection
 
 ## Overview
@@ -69,21 +61,13 @@ The web application follows a microservices architecture pattern with clear sepa
 
 ## Data Preprocessing Methods
 
-### Audio Data Preprocessing
-
-#### Raw Audio Processing
-
-
-### Video Data Preprocessing
-
-
-### Text Data Preprocessing
-
-
-### Clinical Data Preprocessing
-
-
-### Multimodal Data Integration
+| Data Type | Preprocessing Method | Description |
+|-----------|---------------------|-------------|
+| **Audio Data Preprocessing** | | |
+| **Video Data Preprocessing** | | |
+| **Text Data Preprocessing** | | |
+| **Clinical Data Preprocessing** | | |
+| **Multimodal Data Integration** | | |
 
 
 
