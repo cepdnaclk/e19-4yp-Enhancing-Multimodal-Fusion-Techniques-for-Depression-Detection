@@ -1,0 +1,12 @@
+paths:
+  raw_data: data/raw
+  interim_data: data/interim
+  processed_data: data/processed
+  models: models
+
+
+features:
+  text: true
+  audio: true
+  video: true
+  clinical: true

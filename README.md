@@ -33,7 +33,6 @@ The web application follows a microservices architecture pattern with clear sepa
   <img src="./docs/images/web-arc.png" alt="System Architecture Diagram" width="800">
 </div>
 
-
 ### Component Architecture
 
 #### Frontend Layer (React.js)
@@ -72,9 +71,6 @@ The web application follows a microservices architecture pattern with clear sepa
 | **Clinical Data Preprocessing** | | |
 | **Multimodal Data Integration** | | |
 
-
-
-
 ## Tech Stack
 | Component | Technologies |
 | --------- | ------------ |
@@ -92,9 +88,67 @@ The web application follows a microservices architecture pattern with clear sepa
 - Cloud-based scalable deployment.
 
 ## Installation & Usage
----
+
+### Environment Setup (Python + AI Processing)
+Follow the steps below to set up the Python environment for data preprocessing and model inference.
+
+#### 1. Create a Conda Environment
+We use Conda to manage Python dependencies efficiently across modalities.
+Create the environment using the provided `environment.yml`:
+
+```bash
+conda env create -f environment.yml
+conda activate depression-nlp-fyp
+```
+
+#### 2. 🛠️ `environment.yml` Example
+Here's a sample `environment.yml` used in this project:
+
+```yaml
+name: depression-nlp-fyp
+channels:
+  - defaults
+  - conda-forge
+dependencies:
+  - python=3.11
+  - numpy
+  - pandas
+  - pip
+  - pip:
+    - transformers
+    - datasets
+    - evaluate
+```
+
+💡 To add new packages, simply edit the `environment.yml` file under `dependencies:` (for Conda packages) or inside `pip:` (for pip-only packages).
+
+#### 3. Updating the Environment
+If new dependencies are added later, update the environment using:
+
+```bash
+conda env update --file environment.yml --prune
+```
+
+* `--prune`: removes any previously installed packages not listed in the updated file.
+
+#### 4.Alternative: `requirements.txt` (if using pip)
+You can also use a `requirements.txt` file:
+
+```bash
+pip install -r requirements.txt
+```
+
+Sample `requirements.txt`:
+
+```txt
+transformers
+datasets
+evaluate
+openai
+```
 
 ## Research Team
+
 ### Team Members
 - E/19/087, Dissanayaka M.A.S.R, [email](mailto:e19087@eng.pdn.ac.lk)
 - E/19/260, Neranji W.K.G.A.G, [email](mailto:e19260@eng.pdn.ac.lk)
@@ -104,12 +158,8 @@ The web application follows a microservices architecture pattern with clear sepa
 - Prof Roshan Ragel, [email](mailto:roshanr@eng.pdn.ac.lk)
 - Dhanushki Pavithya, [email](mailto:e14240@ce.pdn.ac.lk)
 
----
-
 ## Links
 - [Project Repository](https://github.com/cepdnaclk/e19-4yp-Enhancing-Multimodal-Fusion-Techniques-for-Depression-Detection)
 - [Project Page](https://cepdnaclk.github.io/e19-4yp-Enhancing-Multimodal-Fusion-Techniques-for-Depression-Detection/)
 - [Department of Computer Engineering](http://www.ce.pdn.ac.lk/)
-- [University of Peradeniya](https://eng.pdn.ac.lk/)
-
----
+- [University of Peradeniya](https://eng.pdn.ac.lk)

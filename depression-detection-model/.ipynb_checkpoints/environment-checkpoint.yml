@@ -1,0 +1,29 @@
+name: depression-nlp
+channels:
+  - pytorch
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.9
+  - pip
+  - numpy
+  - pandas
+  - scikit-learn
+  - matplotlib
+  - seaborn
+  - notebook        
+  - pytorch
+  - torchvision
+  - torchaudio
+  - cudatoolkit=11.3  
+  - librosa
+  - transformers
+  - pyyaml
+  - tqdm
+  - pip:
+      - scikit-multilearn
+      - tensorboard
+      - sentencepiece
+      - nltk
+      - opencv-python
+      - soundfile
